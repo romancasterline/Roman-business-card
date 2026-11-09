@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Roman Casterline</title>
-<meta name="description" content="Roman Casterline — Director of Data and Technology">
+<meta name="description" content="Roman Casterline — Director of Data and Technology, Rainey Used Cars">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Roman Casterline">
-<meta property="og:description" content="Director of Data and Technology">
+<meta property="og:description" content="Director of Data and Technology, Rainey Used Cars">
 <meta property="og:image" content="avatar.jpg">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -57,7 +57,8 @@
   .rule { width: 24cqw; height: 4px; background: var(--red); margin: 4cqw 0 3cqw; border: 0; }
   .title { font-family: "Jost", "Montserrat", sans-serif; font-weight: 400; font-size: clamp(16px, 4.6cqw, 24px); line-height: 1.25; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
 
-  .quick { display: flex; gap: 4.6cqw; margin: 11cqw 0 6cqw; }
+  .company { margin-top: 2.6cqw; font-family: "Montserrat", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; font-size: clamp(10px, 2.9cqw, 14px); color: rgba(255,255,255,.7); text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+  .quick { display: flex; gap: 4.6cqw; margin: 8cqw 0 6cqw; }
   .quick a, .quick button {
     width: 15.5cqw; height: 15.5cqw; max-width: 82px; max-height: 82px; min-width: 52px; min-height: 52px;
     border: 1.25px solid var(--ink); border-radius: 50%;
@@ -116,6 +117,16 @@
 
   :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
   @media (min-width: 560px) { body { padding: 24px 0; } .card { min-height: 960px; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.6); } }
+  /* shorter phones (and Safari with toolbars showing): tighten vertical spacing so it fits without scrolling */
+  @media (max-width: 559px) and (max-height: 760px) {
+    .name { margin-top: 17cqw; }
+    .rule { margin: 3cqw 0 2.4cqw; }
+    .quick { margin: 5.5cqw 0 4cqw; }
+    .quick a, .quick button { width: 14cqw; height: 14cqw; }
+    .actions { gap: 2.2cqw; }
+    .btn { padding-top: 2.8cqw; padding-bottom: 2.8cqw; }
+    .site { margin-top: 5cqw; padding-bottom: max(3cqw, env(safe-area-inset-bottom)); }
+  }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -128,6 +139,7 @@
     <h1 class="name">Roman<br>Casterline</h1>
     <hr class="rule">
     <p class="title">Director of Data<br>and Technology</p>
+    <p class="company">Rainey Used Cars</p>
 
     <nav class="quick" aria-label="Quick contact">
       <button type="button" id="phoneBtn" aria-label="Call or text">
